@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Simbolo utilizado para abrir o formulario (setinha para baixo) -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" 
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <!-- Fonte utilizada no site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Titulo que aparece na barrinha de cima da pagina -->
+    <title>JobsNET</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="./imagens/logo.png" width="200px" alt="Logo JobsNet">
+        </div>
+    </header>
+
+    <main>
+        <selection class="container">
+            <div class="name">
+                <h1>JobsNET</h1>
+                <h5>Preencha o formulário clicando na setinha</h5>
+            </div>
+
+            <div onclick="displayAbout()" id= "arrow">
+                <i id="animation" class="fas fa-sort-down"></i>
+            </div>
+
+            <div style="display: none;" id="about">
+                <p>
+                    Olá, somos da empresa JobsNET especialista em recrutamento e seleção de profissionais nas mais diversas 
+                    áreas!!! Caso você tenha interesse, preencha o formulário abaixo para se para conectar com as 
+                    oportunidades de emprego.
+                </p>
+
+                <div class= "form">
+                    <h2>DADOS PESSOAIS</h2>
+                    
+                     Nome Completo:*<br> <input type="text" name="nCompleto" placeholder="Digite seu Nome Completo"required><br>
+
+                     Cargo Pretendido:*<br> <input type="text" name="cPretendido" placeholder="Digite seu Cargo Pretendido" required><br>
+
+                     Data de nascimento: * <br><input type="date" name="nascimento" required><br>
+
+                     E-mail:*<br> <input type="email" name="e-mail" placeholder="Digite seu e-mail aqui" required><br>
+                        
+                     Identidade: *<br> <input type="text" name="identidade" placeholder="Digite seu RG" required><br>
+                
+                     CPF: *<br> <input type="text" name="cpf" placeholder="Digite seu CPF" required><br>
+
+                     <label for="estadoCivil">Estado Civil:</label><br>
+                        <select id="estadoCivil" name="estadoCivil">
+                            <option value="selecione a opção">Selecione a opção</option>
+                            <option value="solveiro(a)">Solteiro(a)</option>
+                            <option value="casado(a)">Casado(a)</option>
+                            <option value="divorciado(a)">Divorciado(a)</option>
+                            <option value="viuvo(a)">Viúvo(a)</option>
+                        </select><br>
+                    
+                     <label for="sexo">Sexo:<br></label>
+                        <select id="sexo" name="sexo">
+                            <option value="selecione a opção">Selecione a opção</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="masculino">Masculino</option>
+                        </select><br><br>
+
+                         <form method="get" action=".">
+                         <h2>Endereço:</h2>
+                            <label>CEP:*<br>
+                            <input name="cep" type="text" id="cep" placeholder="Digite seu CEP" value="" size="10" maxlength="9" 
+                                   onblur="pesquisacep(this.value);" required /></label><br />
+                            <label>Rua:<br>
+                            <input name="rua" type="text" id="rua" size="60" /></label><br />
+                            <label>Número:*<br>
+                            <input name="numero" type="text" id="numero" placeholder="Digite o número de sua residência" size="60" /></label><br />
+                            <label>Complemento:<br>
+                                <input name="complemento" type="text" id="complemento" placeholder="Digite o complemento, caso tenha" size="60" /></label><br />
+                            <label>Bairro:<br>
+                            <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+                            <label>Cidade:<br>
+                            <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+                            <label>Estado:<br>
+                            <input name="uf" type="text" id="uf" size="2" /></label><br />
+                          </form><br>
+                        
+                    <h2>CONTATO</h2>
+                     <label for="telefone">Telefone fixo:</label><br>
+                     <input type="tel" id="telefone" name="telefone" placeholder="(DDD) 1234-5678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br>
+        
+                     <label for="celular">Telefone Celular:*</label><br>
+                     <input type="tel" id="celular" name="celular" placeholder="(DDD) 91234-5678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required><br>
+                        
+                        <div class= "veiculo"> 
+                         <p>Veiculo</p> 
+                         <label class="sliderbutton">
+                             <input type="checkbox"> <span class="slider round"></span>
+                         </label>
+                        </div><br>
+    
+                        <div class= "habilitacao">
+                            <p>Habilitação</p>
+                          <label class="sliderbutton">
+                             <input type="checkbox"> <span class="slider round"></span>
+                          </label>    
+                        </div>
+                    <button>Enviar!!!</button>
+                </div>
+            </div>
+
+        </selection>
+
+    </main>
+
+    <script src= "script.js"></script>
+
+</body>
+</html>
